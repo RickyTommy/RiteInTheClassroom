@@ -33,7 +33,7 @@ public class RiteInTheClassroom {
         Toolbar.setGlobalToolbar(true);
 
         // Pro only feature, uncomment if you have a pro subscription
-        Log.bindCrashProtection(true);
+        //Log.bindCrashProtection(true);
 
         addNetworkErrorListener(err -> {
             // prevent the event from propagating
@@ -41,7 +41,8 @@ public class RiteInTheClassroom {
             if(err.getError() != null) {
                 Log.e(err.getError());
             }
-            Log.sendLogAsync();
+            //Log.sendLogAsync();
+            //Remove error code for production
             Dialog.show("Connection Error", "There was a networking error in the connection to " + err.getConnectionRequest().getUrl(), "OK", null);
         });        
     }
